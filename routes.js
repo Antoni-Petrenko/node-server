@@ -30,6 +30,7 @@ module.exports = routes = (req, res) => {
       const data = Object.fromEntries(
         Buffer.concat(body)
           .toString()
+          .replace(/\+/g," ")
           .split("&")
           .map((keyValue) => keyValue.split("="))
       );
